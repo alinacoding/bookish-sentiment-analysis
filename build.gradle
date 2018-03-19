@@ -1,0 +1,26 @@
+apply plugin: 'application'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.9
+targetCompatibility = 1.9
+
+repositories {
+     mavenCentral()
+}
+
+mainClassName = 'com.example.helloworld.HelloWorldApplication'
+
+jar {
+    manifest {
+        attributes(
+						"Implementation-Title": project.name,
+            "Implementation-Version": '0.1.0',
+            "Main-Class": mainClassName)
+    }
+}
+
+applicationDefaultJvmArgs = ["--add-modules", "java.xml.bind"]
+
+dependencies {
+    implementation 'io.dropwizard:dropwizard-core:1.3.0'
+}
