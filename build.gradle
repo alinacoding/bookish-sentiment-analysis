@@ -1,19 +1,19 @@
 apply plugin: 'application'
 apply plugin: 'idea'
 
-sourceCompatibility = 1.9
-targetCompatibility = 1.9
+sourceCompatibility = 9
+targetCompatibility = 9
 
 repositories {
      mavenCentral()
 }
 
-mainClassName = 'com.example.helloworld.HelloWorldApplication'
+mainClassName = 'com.bookishsentimentanalysis.BookSearchApplication'
 
 jar {
     manifest {
         attributes(
-						"Implementation-Title": project.name,
+		"Implementation-Title": project.name,
             "Implementation-Version": '0.1.0',
             "Main-Class": mainClassName)
     }
@@ -22,5 +22,10 @@ jar {
 applicationDefaultJvmArgs = ["--add-modules", "java.xml.bind"]
 
 dependencies {
-    implementation 'io.dropwizard:dropwizard-core:1.3.0'
+
+	compile group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
+	compile 'com.squareup.okhttp3:okhttp:3.10.0'
+	compile group: 'org.json', name: 'json', version: '20180130'
+
+	implementation 'io.dropwizard:dropwizard-core:1.3.0'
 }
