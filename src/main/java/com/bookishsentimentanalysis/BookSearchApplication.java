@@ -10,7 +10,9 @@ public class BookSearchApplication extends Application<BookSearchConfiguration> 
 
     @Override
     public void run(BookSearchConfiguration configuration, Environment environment) {
+        SentimentAnalyzer sentimentAnalyzer = new SentimentAnalyzer();
         environment.jersey().register(new BookSearchResource());
+        environment.jersey().register(new BookReviewsResource(sentimentAnalyzer));
 
     }
 }

@@ -11,7 +11,7 @@ import org.json.XML;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Path("/reviews")
+@Path("/book-search")
 public class BookSearchResource {
 
     private static final Logger log = LoggerFactory.getLogger(BookSearchResource.class);
