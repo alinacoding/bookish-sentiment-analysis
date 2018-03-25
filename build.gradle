@@ -22,9 +22,10 @@ jar {
 applicationDefaultJvmArgs = ["--add-modules", "java.xml.bind"]
 
 dependencies {
+
+	compile group: 'com.optimaize.languagedetector', name: 'language-detector', version: '0.6'
 	compile group: 'edu.stanford.nlp', name: 'stanford-corenlp', version: '3.9.1'
 	compile group: 'edu.stanford.nlp', name: 'stanford-corenlp', version: '3.9.1', classifier: 'models'
-
 	compile group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
 	compile group: 'org.jsoup', name: 'jsoup', version: '1.11.2'
 	compile group: 'org.json', name: 'json', version: '20180130'

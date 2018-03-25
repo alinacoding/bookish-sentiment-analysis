@@ -18,8 +18,8 @@ public class BookSearchResource {
 
     private final OkHttpClient okHttpClient;
 
-    public BookSearchResource() {
-        this.okHttpClient = new OkHttpClient();
+    public BookSearchResource(OkHttpClient okHttpClient) {
+        this.okHttpClient = okHttpClient;
     }
 
     @GET
